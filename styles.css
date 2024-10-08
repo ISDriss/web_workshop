@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: red;
+    height: 20vh;
+}
+
+.main {
+    background-color: gray;
+    flex-grow: 1;
+}
+
+.left {
+    background: yellow;
+    flex-grow: 1;
+}
+
+.right {
+    background-color: green;
+    flex-grow: 1;
+}
+
+.footer {
+    background: blue;
+    height:20vh
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+@media  screen and (min-with: 768px) {
+    .content {
+        flex-direction: row;
+    }
+}
