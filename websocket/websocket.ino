@@ -31,17 +31,19 @@ void setup() {
   Serial.println("Starting WebSocket server...");
   webSocket.begin();
   webSocket.onEvent(onWebSocketEvent);
+  Serial.println("Working on IP: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
   webSocket.loop();
-  //Serial.println("Working");
-  //Serial.println(WiFi.localIP());
+
   
   // Send a message to all connected clients every 5 seconds
   static unsigned long lastSend = 0;
   if (millis() - lastSend >= 5000) {
     lastSend = millis();
+    Serial.println("Sending Ping");
     webSocket.broadcastTXT("Ping");
   }
 }
