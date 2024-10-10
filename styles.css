@@ -1,8 +1,28 @@
-/* General reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+/* Define the locally saved font using @font-face */
+@font-face {
+    font-family: 'Overdrive_Avenue';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Overdrive_Avenue.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overdrive_Avenue_Outline';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Overdrive_Avenue-Outline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hotliner';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Hotliner.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Body and background styling */
@@ -10,33 +30,55 @@ body {
     font-family: 'Orbitron', sans-serif;
     background-color: #070707;
     color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
 }
 
-.container {
+/* Keep header at the top of the page */
+header {
+    background-color: #0CCA4A;
+    height: 15vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;  /* Ensures the header stays above all other content */
     text-align: center;
-    width: 80%;
-    max-width: 600px;
 }
 
-/* Header styling */
 header h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 36px;
-    color: #0CCA4A;
-    margin-bottom: 5px;
+    position: relative;
+    font-size: 7vh;
+
+    font-family: 'Overdrive_Avenue_Outline', sans-serif; /* Outline version */
+    color: transparent; /* Ensure the outline-only font remains transparent */
+    margin-bottom: 1vh;
+    -webkit-text-stroke: 1px #009FFD; /* Optional outline stroke for browsers */
+
+    font-family: 'Overdrive_Avenue', sans-serif; /* Filled version */
+    color: #6E108C; /* Fill color */
+    z-index: -1; /* Layer the fill below the outline */
 }
 
 header p {
-    font-family: 'Orbitron', sans-serif;
-    color: #FFFFFF;
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-family: 'Hotliner', sans-serif;
+    color: #FF4D00;
+    font-size: 4vh;
+    letter-spacing: 0.5vh;
     text-transform: uppercase;
+}
+
+/* Add padding-top to body content to prevent overlap with fixed header */
+.container {
+    text-align: center;
+    margin-top: 15vh; /* Prevents overlap with the fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Connect button styling */
@@ -48,8 +90,11 @@ header p {
     background-color: #FF4D00;
     color: #FFFFFF;
     border: none;
-    padding: 15px 30px;
-    font-size: 20px;
+    height: 20vh;
+    width: 20vh;
+    font-size: 4vh;
+    min-height: 80px;
+    min-width: 80px;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -60,19 +105,19 @@ header p {
 }
 
 /* Output box styling */
-.output-wrapper {
-    margin: 20px 0;
-}
+/* .output-wrapper {
+} */
 
 .server-output {
-    width: 100%;
-    height: 150px;
+    width: 100vh;
+    height: 50vh;
+    min-height: 400px;
     background-color: #d3d3d3;
     border: 2px solid #FF4D00;
     border-radius: 8px;
     padding: 10px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
+    font-size: 2vh;
     color: #070707;
     resize: none;
 }
@@ -82,13 +127,12 @@ header p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
 }
 
 .client-input {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
+    width: 89vh;
+    padding: 1vh;
+    font-size: 2vh;
     font-family: 'Orbitron', sans-serif;
     background-color: #d3d3d3;
     border: 2px solid #FF4D00;
@@ -101,8 +145,8 @@ header p {
     background-color: #0CCA4A;
     color: #FFFFFF;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 1.25vh 2.5vh ;
+    font-size: 2vh;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease;
