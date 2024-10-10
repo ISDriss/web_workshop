@@ -1,6 +1,6 @@
 const connectButton = document.getElementById('connectBtn');
 const sendButton = document.getElementById('sendBtn');
-const messageInput = document.getElementById('text');
+const messageInput = document.getElementById('clientInput');
 const outputDiv = document.getElementById('serverOutput');
 
 let socket = null;
@@ -11,27 +11,28 @@ connectButton.addEventListener('click', () => {
 
   socket.onopen = () => {
     console.log('Connexion établie');
-    outputDiv.innerHTML += 'Connexion établie<br>';
+    outputDiv.innerHTML += 'Connexion établie\r\n';
   };
 
   socket.onmessage = (event) => {
     console.log(`Message reçu : ${event.data}`);
-    outputDiv.innerHTML += `Message reçu : ${event.data}<br>`;
+    outputDiv.innerHTML += `S> ${event.data}\r\n`;
   };
 
   socket.onclose = () => {
     console.log('Connexion fermée');
-    outputDiv.innerHTML += 'Connexion fermée<br>';
+    outputDiv.innerHTML += 'Connexion fermée\r\n';
   };
 
   socket.onerror = (error) => {
     console.log(`Erreur : ${error}`);
-    outputDiv.innerHTML += `Erreur : ${error}<br>`;
+    outputDiv.innerHTML += `Erreur : ${error}\r\n`;
   };
 });
 
 sendButton.addEventListener('click', () => {
   const message = messageInput.value;
+  outputDiv.innerHTML += `C> ${message}\r\n`
   socket.send(message);
   messageInput.value = '';
 });
