@@ -104,22 +104,25 @@ header p {
     transform: scale(1.1);
 }
 
-/* Output box styling */
-/* .output-wrapper {
-} */
-
 .server-output {
     width: 100vh;
     height: 50vh;
     min-height: 400px;
-    background-color: #d3d3d3;
-    border: 2px solid #FF4D00;
     border-radius: 8px;
     padding: 10px;
+
+    border: 2px solid #FF4D00;
+    background-color: #d3d3d3;
+    color: #070707;
+    
+    text-align: left;
     font-family: 'Orbitron', sans-serif;
     font-size: 2vh;
-    color: #070707;
+    font-weight: bold;
+
     resize: none;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    white-space: pre-wrap; /* Preserve white space and newlines */
 }
 
 /* Input and Send button styling */
