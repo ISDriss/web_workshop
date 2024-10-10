@@ -68,7 +68,6 @@ String ButtonAction(int row, int col) {
   }
 }
 
-
 void setup() {
   Serial.begin(115200);
   WebSocketSetup();
@@ -93,12 +92,4 @@ void loop() {
     // Setting current line back to HIGH
     digitalWrite(ROW_PINS[row], HIGH);
   }
-  
-  // Send a message to all connected clients every 5 seconds
-  //static unsigned long lastSend = 0;
-  //if (millis() - lastSend >= 5000) {
-  //  lastSend = millis();
-    //Serial.println("Sending Ping");
-  //  webSocket.broadcastTXT("Ping");
-  //}
 }
