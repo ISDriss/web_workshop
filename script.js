@@ -1,7 +1,7 @@
-const connectButton = document.getElementById('connect-button');
-const sendButton = document.getElementById('send-button');
-const messageInput = document.getElementById('message-input');
-const outputDiv = document.getElementById('output');
+const connectButton = document.getElementById('connectBtn');
+const sendButton = document.getElementById('sendBtn');
+const messageInput = document.getElementById('text');
+const outputDiv = document.getElementById('serverOutput');
 
 let socket = null;
 
