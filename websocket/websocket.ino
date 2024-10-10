@@ -43,7 +43,7 @@ void loop() {
   static unsigned long lastSend = 0;
   if (millis() - lastSend >= 5000) {
     lastSend = millis();
-    Serial.println("Sending Ping");
+    //Serial.println("Sending Ping");
     webSocket.broadcastTXT("Ping");
   }
 }
