@@ -84,9 +84,10 @@ void loop() {
     digitalWrite(ROW_PINS[row], LOW);
     
     for (int col = 0; col < 3; col++) {
-      if (digitalRead(COL_PINS[col]) == LOW) {  // Pressed Button
-        Serial.print(ButtonAction(row,col));
-        delay(200);  // slight delay
+      if (digitalRead(COL_PINS[col]) == LOW) {  //Button Press
+        String btnAction = ButtonAction(row, col);
+        webSocket.broadcastTXT(btnAction);
+        delay(200);  // slight delay to avoid rebounce
       }
     }
     // Setting current line back to HIGH
