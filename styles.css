@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define the locally saved font using @font-face */
+@font-face {
+    font-family: 'Overdrive_Avenue';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Overdrive_Avenue.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overdrive_Avenue_Outline';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Overdrive_Avenue-Outline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hotliner';
+    src: url('./overdrive-avenue-2-in-1-retro-wave-font/Hotliner.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body and background styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #070707;
+    background-image: url("neon sunset.jpg");
+    background-position: center;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    height: 14vh;
+    width: auto;
+    z-index: 11;
+}
+
+/* Keep header at the top of the page */
+header {
+    background-color: #FF4D00;
+    height: 15vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;  /* Ensures the header stays above all other content */
+    text-align: center;
+}
+
+header h1 {
+    position: relative;
+    font-size: 7vh;
+    font-family: 'Overdrive_Avenue_Outline', sans-serif; /* Outline version */
+    color: transparent; /* Ensure the outline-only font remains transparent */
+    margin-bottom: 1vh;
+    -webkit-text-stroke: 1px #009FFD; /* Optional outline stroke for browsers */
+    font-family: 'Overdrive_Avenue', sans-serif; /* Filled version */
+    color: #6E108C; /* Fill color */
+    z-index: -1; /* Layer the fill below the outline */
+}
+
+header p {
+    font-family: 'Hotliner', sans-serif;
+    color: #FFFFFF;
+    font-size: 2.5vh;
+    letter-spacing: 0.5vh;
+    text-transform: uppercase;
+}
+
+/* Add padding-top to body content to prevent overlap with fixed header */
+.container {
+    text-align: center;
+    margin-top: 20vh; /* Prevents overlap with the fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+}
+
+/* Connect button styling */
+.connect-wrapper {
+    margin: 2vh 0;
+}
+
+.connect-btn {
+    background-color: #009FFD;
+    color: #FFFFFF;
+    border: none;
+    height: 20vh;
+    width: 20vh;
+    font-size: 4vh;
+    font-weight: bold;
+    min-height: 80px;
+    min-width: 80px;
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.connect-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Output textarea (now responsive) */
+.server-output {
+    width: 90vh;
+    max-width: 600px;
+    height: 40vh;
+    min-height: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #FF4D00;
+    background-color: #d3d3d3;
+    color: #070707;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vh;
+    font-weight: bold;
+    resize: none;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+/* Input and Send button styling */
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2vh;
+}
+
+.client-input {
+    width: 70%;
+    padding: 1.25vh;
+    font-size: 2vh;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #d3d3d3;
+    border: 2px solid #FF4D00;
+    border-radius: 8px;
+    color: #070707;
+    outline: none;
+}
+
+.send-btn {
+    background-color: #0CCA4A;
+    color: #FFFFFF;
+    border: none;
+    padding: 1.5vh 2.5vh;
+    font-size: 2vh;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: #009FFD;
+}
+
+/* Responsive design: Mobile-specific adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 6vh;
+    }
+
+    header p {
+        font-size: 2vh;
+    }
+
+    .container {
+        margin-top: 18vh;
+    }
+
+    .connect-btn {
+        height: 18vw;
+        width: 18vw;
+        font-size: 3.5vw;
+    }
+
+    .server-output {
+        width: 40vh;
+        height: 35vh;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .client-input {
+        width: 100%;
+        margin-bottom: 1.5vh;
+    }
+
+    .send-btn {
+        width: 100%;
+        text-align: center;
+        padding: 1.5vh 0;
+    }
+}
+
