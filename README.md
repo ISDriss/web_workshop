@@ -2,6 +2,9 @@
 local wifi websocket app, for basic communication with an arduino board.  
 Meant to be used as a baseline for future projects that would need to use similar communication methods.
 
+## Moodboard
+![alt text](Docs/Moodboard.png "Moodboard") 
+
 ## The site map on paper
 ![alt text](Docs/on_paper.jpg "On paper")  
 
